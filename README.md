@@ -1,41 +1,73 @@
-# Nexon Safe
+# Nexus AI
 
-A safety-first version of the clap-triggered desktop assistant.
+A Python-based personal AI voice assistant developed independently by a first-year Computer Science and Engineering student.
 
-## What changed from the original
+Nexus is designed to provide voice-based interaction with an AI system while also performing useful tasks on a local macOS system. The project combines speech recognition, AI APIs, text-to-speech, web search, application control, and a modular skill-based architecture.
 
-- Removed the Binance/trading action entirely.
-- Claude is **off by default**.
-- Chrome web actions use a separate temporary profile instead of your normal Chrome cookies/extensions.
-- Only HTTPS URLs on an explicit allowlist are opened.
-- ElevenLabs TTS is **off by default** and only contacts ElevenLabs when you explicitly enable it.
-- No shell/PowerShell commands, `eval`, `exec`, downloads, or arbitrary command strings.
-- Cursor is only focused/launched; no command is passed to it.
-- The project contains source/config/docs only — no compiled `.pyc` or executable payload.
+The project was developed individually from scratch as a practical exploration of Python, artificial intelligence, automation, API integration, and software engineering.
 
-## Install
+---
 
-Use a fresh virtual environment if possible:
+## Overview
 
-```bash
-python -m venv .venv
-.venv\\Scripts\\activate
-python -m pip install -r requirements.txt
-python Nexon.py
-```
+Nexus allows users to interact with a computer using natural voice commands.
 
-## Optional TTS
+The assistant can process spoken input, determine the type of request, route the request to the appropriate skill, and provide a spoken response.
 
-Copy `.env.example` to `.env`, add your own ElevenLabs credentials, then set:
+The architecture is designed to be modular so that new capabilities can be added without restructuring the entire application.
 
-```env
-JARVIS_TTS_ENABLED=true
-```
+---
 
-Never commit `.env` or your API key.
+## Key Features
 
-## Safety notes
+- Voice-based interaction
+- Speech-to-text processing
+- AI-powered conversational responses
+- Text-to-speech output
+- Web search
+- Application launching and control
+- System information retrieval
+- File-related operations
+- Spotify integration
+- Browser integration
+- Modular skill system
+- Skill-based command routing
+- Global activation shortcut
+- Graceful shutdown and interruption handling
+- Environment-variable based API configuration
 
-The microphone is intentionally accessed while the program is running because clap detection requires it. Stop the program with `Ctrl+C` when you do not want it listening.
+---
 
-Chrome automation uses a temporary profile under the OS temp directory. This means existing Chrome logins/cookies are not reused.
+## Architecture
+
+```text
+User Voice
+    |
+    v
+Speech Recognition
+    |
+    v
+Nexus Controller
+    |
+    v
+Skill Router
+    |
+    +-------------------+
+    |         |         |
+    v         v         v
+ System    Browser   Spotify
+  Skills     Skills    Skills
+    |         |         |
+    +---------+---------+
+              |
+              v
+          AI Backend
+              |
+              v
+        Response Generation
+              |
+              v
+         Text-to-Speech
+              |
+              v
+          User Response
