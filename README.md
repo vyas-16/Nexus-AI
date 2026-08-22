@@ -71,3 +71,18 @@ Skill Router
               |
               v
           User Response
+
+## About the Developer
+
+Nexus AI was developed individually by Vyas, a first-year Bachelor of Technology student specializing in Computer Science and Engineering.
+
+Project Information
+Developer: Vyas
+Academic Level: First Year B.Tech
+Specialization: Computer Science and Engineering
+Project Type: Individual / Solo Project
+Primary Language: Python
+Platform: macOS
+Repository: GitHub
+
+This project was created as part of my journey into software development and artificial intelligence, with an emphasis on learning through building real applications
