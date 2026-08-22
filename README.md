@@ -1,6 +1,6 @@
 # Nexus AI
 
-A modular AI voice assistant for macOS, built entirely with Python.
+A modular AI voice assistant for macOS/Windows, built entirely with Python.
 
 Nexus is a personal AI assistant designed to understand natural voice commands, provide AI-powered responses, perform system-level tasks, search the web, interact with applications, and continuously communicate with the user through voice.
 
